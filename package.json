@@ -1,0 +1,30 @@
+{
+  "name": "kickingnscreaming",
+  "version": "0.0.1",
+  "description": "Kicking-N-Screaming - Associate `types` metadata to your draggable and droppable elements and only recieve events (dragenter, dragover, dragleave) when both draggable and droppable elements have one or more `types` in common.",
+  "main": "kickingnscreaming.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/imbcmdth/kickingnscreaming.git"
+  },
+  "keywords": [
+    "drag and drop",
+    "drag",
+    "drop",
+    "draggable",
+    "droppable"
+  ],
+  "devDependencies": {
+  },
+  "author": {
+    "name": "Jon-Carlos Rivera",
+    "email": "jon.carlos.rivera@gmail.com",
+    "url": "http://jon-carlos.com"
+  },
+  "scripts": {
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.6.x"
+  }
+}
