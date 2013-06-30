@@ -1,6 +1,8 @@
-# Kicking-N-Screaming - a drag-n-drop helper
+# Kicking-N-Screaming 
 
-A drag-n-drop helper that somewhat tames HTML5's insane DnD system. Allows you to associate meta-type data to your draggable and droppable elements and only recieve events when they match.
+### A drag-n-drop helper
+
+Somewhat tames HTML5's insane DnD system. Allows you to associate meta-type data to your draggable and droppable elements and to recieve the events *dragenter, dragleave, and dragover* only when both the draggable and droppable elements have one or more `types` that match.
 
 ### Node.js
 
@@ -48,10 +50,10 @@ var dragHelper = KickingNScreaming({
 // Make two draggable elements
 dragHelper.makeDraggable(draggableFoo, "foo");
 dragHelper.makeDraggable(draggableBar, "bar");
-dragHelper.makeDraggable(draggableBaz, "baz");
+dragHelper.makeDraggable(draggableBaz, "foo baz");
 
 // Setup drop targets
-dragHelper.makeDroppable(dropTargetFoo, "foo baz");
+dragHelper.makeDroppable(dropTargetFoo, "foo");
 dragHelper.makeDroppable(dropTargetBar, ["bar", "baz"]);
 dragHelper.makeDroppable(dropTargetAny, "foo bar baz");
 ````
@@ -62,13 +64,15 @@ The `dragover` function will print "BAZ" under the following conditions:
 
 * Whenever `draggableBar` is dragged over `dropTargetBar`
 
-* Whenever `draggableBaz` is dragged over any drag target
+* Whenever `draggableBaz` is dragged over **any** drag target
 
-* Whenever any draggable is dragged over `dropTargetAny`
+* Whenever **any** draggable is dragged over `dropTargetAny`
 
 ## API
 
-### `KickingNScreaming([options])` 
+#### `KickingNScreaming([options])` 
+
+Construct a new KickingNScreaming object
 
 * `options` is an object that can override the following default properties:
 
@@ -97,13 +101,17 @@ The `dragover` function will print "BAZ" under the following conditions:
 }
 ````
 
-### `KickingNScreaming#makeDroppable(element[, types])` - adds DnD events to a drag target
+#### `makeDroppable(element[, types])` 
+
+Adds DnD events to a drag target
 
 * `element` - DOM node that will become draggable
 
 * `types` - optional string or array that specifies the type(s) of this element
 
-### `KickingNScreaming#makeDraggable(element[, types])` - adds DnD events to a drop target
+#### `makeDraggable(element[, types])` 
+
+Adds DnD events to a drop target
 
 * `element` - DOM node that will become a drop-target
 
